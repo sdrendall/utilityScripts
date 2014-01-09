@@ -22,11 +22,15 @@ end
 % remove '.'from filetype
 filetypes = strrep(filetypes, '.', '');
 
+if path(end) ~= '/'
+    path = [path, '/'];
+end
+
 
 % read files, return names
-files = dir(strcat(path, '/*.', filetypes{1})); % create files array
+files = dir(strcat(path, '*.', filetypes{1})); % create files array
 for iFiletype = 2:length(filetypes)
-    files = [files, dir(strcat(path, '/*.', filetypes{iFiletype}))];  % read file info
+    files = [files, dir(strcat(path, '*.', filetypes{iFiletype}))];  % read file info
 end
 
 % check for files
