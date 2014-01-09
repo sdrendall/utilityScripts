@@ -11,7 +11,7 @@ function [imagePaths, filenames] = getImagePath(path, filetypes)
 
 % prompt for image path
 if ~exist('path', 'var')
-    path = uigetdir('~/Pictures/hcccTimelapsesForJin/', 'Specify Image Containing Directory');
+    path = uigetdir('~', 'Specify Image Containing Directory');
 end
 
 % prompt for filetype
@@ -35,7 +35,7 @@ end
 
 % check for files
 if min(size(files)) == 0
-    errordlg('No images of supported filetypes found in specified directory');
+    warning(['No images of supported filetypes found in specified directory: ', path]);
     imagePaths = [];
     filenames = [];
     return
@@ -44,5 +44,5 @@ end
 % return names
 for i = 1:length(files)
     filenames{i} = files(i).name;
-    imagePaths{i} = [path, '/', files(i).name];  % return paths
+    imagePaths{i} = [path, files(i).name];  % return paths
 end
