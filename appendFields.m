@@ -10,7 +10,6 @@ if iscell(unique)
     end
 % add strings
 elseif ischar(unique)
-    unique
     struct = setfield([struct(:)], {1}, unique, []);
 else
     warning('"appendFields" does not accept inputs of class: ', class(unique));
