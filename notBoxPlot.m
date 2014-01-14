@@ -108,8 +108,8 @@ if nargin==0
     return
 end
 
-% Removing support for single vectors.  
-%if isvector(y), y=y(:); end
+% support for single vectors.  
+if isvector(y), y=y(:); end
 
 if nargin<2 || isempty(x)
     x=1:size(y,2);
