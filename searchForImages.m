@@ -64,7 +64,7 @@ images = cdContents(strcmp(entrySuffixes, filetype));
 
 % Add path and originalDir to each image struct
 for iIm = 1:length(images)
-    images(iIm).path = [startPath, images(iIm).name];
+    images(iIm).path = fullfile(startPath, images(iIm).name);
     images(iIm).originalDir = startPath;
     images(iIm).originalDirName = getDirectoryName(startPath);
 end
