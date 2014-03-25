@@ -23,7 +23,7 @@ else
 end
 
 if ~exist('startPath', 'var')
-    startPath = getuidir('~', 'Specify start path for search');
+    startPath = uigetdir('~', 'Specify start path for search');
     % Recursively handle cells
 elseif iscell(startPath)
     images = [];
