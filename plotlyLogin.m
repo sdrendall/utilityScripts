@@ -3,7 +3,7 @@ function plotlyLogin
 % superfluous
 
 apiKey = 'elyp1ts66j';
-username = 'sdrendall';
+username = 'SamRendall';
 email = 'sdrendall@gmail.com';
 
 signin(username, apiKey);
